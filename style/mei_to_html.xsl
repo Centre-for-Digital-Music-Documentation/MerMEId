@@ -2287,7 +2287,18 @@
 				<xsl:text> (</xsl:text>
 				<xsl:apply-templates select="."/>
 				<xsl:text>)</xsl:text>
-			</xsl:for-each>. </xsl:for-each>
+			</xsl:for-each>
+			<!-- provenance with persName, list with semicolons -->
+			<xsl:for-each select="m:persName">
+				<xsl:apply-templates/>
+			</xsl:for-each>
+			<xsl:if test="position()!=last()">
+				<xsl:text>; </xsl:text>
+			</xsl:if>
+			<xsl:if test="position()=last()">
+				<xsl:text>. </xsl:text>
+			</xsl:if>   
+		</xsl:for-each>
 	</xsl:template>
 
 	<!-- format scribe's name and medium -->
