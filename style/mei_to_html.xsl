@@ -2193,7 +2193,7 @@
 			<p>
                 <xsl:value-of select="$l/plate_number"/> <xsl:apply-templates/>.</p>
 		</xsl:for-each>
-		<xsl:apply-templates select="m:handList[m:hand/@medium!='' or m:hand/text()]"/>
+		<xsl:apply-templates select="m:handList[m:hand/@medium!='' or m:hand/text() or m:hand/m:persName/text()]"/>
 		<xsl:apply-templates select="m:physMedium"/>
 		<xsl:apply-templates select="m:watermark"/>
 		<xsl:apply-templates select="m:condition"/>
@@ -2295,7 +2295,40 @@
 		<xsl:call-template name="lowercase">
 			<xsl:with-param name="str" select="translate(@medium,'_',' ')"/>
 			</xsl:call-template>
-		<xsl:if test=".//text()"> (<xsl:apply-templates select="."/>)</xsl:if>
+		<xsl:if test=".//text() and @medium!=''"> (<xsl:apply-templates/>)</xsl:if>
+		<xsl:if test="m:persName or @medium=''">
+			<xsl:apply-templates mode="scribe"/>
+		</xsl:if>
+	</xsl:template>
+	
+	<!-- scribe's name with role and certainty-->
+	<xsl:template match="m:persName" mode="scribe">
+		<xsl:if test="./text()">
+			<xsl:text> </xsl:text>    
+			<xsl:apply-templates/>
+		</xsl:if>
+		<xsl:if test="@role!='' or @cert">
+			<xsl:text> (</xsl:text>
+			<xsl:variable name="role">
+				<xsl:value-of select="translate(@role, ' ', '_')"/>
+			</xsl:variable>
+			<xsl:value-of select="$l/*[name()=$role]"/>
+			<xsl:choose>
+				<xsl:when test="@cert='high'">
+					<xsl:text>, gesichert</xsl:text>
+				</xsl:when>
+				<xsl:when test="@cert='low'">
+					<xsl:text>, unwahrscheinlich</xsl:text>
+				</xsl:when>
+				<xsl:when test="@cert='medium'">
+					<xsl:text>, zweifelhaft</xsl:text>
+				</xsl:when>
+				<xsl:when test="@cert='unknown' or @cert=''">
+					<xsl:text>, nicht geprüft</xsl:text>
+				</xsl:when>
+			</xsl:choose>
+			<xsl:text>)</xsl:text>
+		</xsl:if>
 	</xsl:template>
 
 	<!-- list scribes -->
@@ -2313,7 +2346,17 @@
                     <xsl:text> </xsl:text>
 				</xsl:if>
 				<xsl:apply-templates select="." mode="scribe"/>
-            </xsl:for-each>. </xsl:if>
+			</xsl:for-each>
+			<!-- list scribes with semicolon -->
+			<xsl:choose>
+				<xsl:when test="m:hand[not(@type='main')]">
+					<xsl:text>; </xsl:text>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>. </xsl:text>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
 		<xsl:if test="count(m:hand[@type='additions' and (@medium!='' or .//text())]) &gt; 0">
 			<xsl:choose>
 				<xsl:when test="@medium!=''">
@@ -2333,7 +2376,17 @@
                     <xsl:text> </xsl:text>
 				</xsl:if>
 				<xsl:apply-templates select="." mode="scribe"/>
-            </xsl:for-each>. </xsl:if>
+			</xsl:for-each>
+			<!-- list scribes with semicolon -->
+			<xsl:choose>
+				<xsl:when test="m:hand[not(@type='additions') and not(@type='main')]">
+					<xsl:text>; </xsl:text>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>. </xsl:text>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
 	</xsl:template>
 
 
