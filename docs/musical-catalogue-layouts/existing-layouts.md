@@ -1,6 +1,6 @@
-# Analysis of the layouts of musical digital editions
+# Existing layouts for digital musical catalogues
 
-## Musical digital editions that were analyzed
+## Digital catalogues that were analyzed
 
 * [CNW - Catalogue of Carl Nielsen's Works](https://kb.dk/dcm/cnw/navigation.xq)
 
@@ -15,7 +15,7 @@
 
 * [NWGW - Niels W. Gade. Thematic-Bibliographic Catalogue of His Works](http://kb.dk/dcm/nwgw.html)
 
-## The sections and subsections of the main pages
+## The sections and subsections of the main page
 
 ### Header section
 
@@ -31,10 +31,16 @@ This section presents the pages accesed by the user by clicking on the buttons l
 With the exception of the ```catalogue``` page and the ```work page```, all the other pages consist mainly of text. The former pages are dealt with below.
 
 #### Catalogue page
+This page contains two subsections: one subsection for searching in indexes generated from the metadata, and one subsection for displaying the search result.
+
+##### Subsection for searching in indexes
+??
+
+##### Subsection for displaying the search result
 ??
 
 #### Work page
-??
+This page contains all the metadata about the work, in a pretty printed format (HTML), along with a button for viewing, in a different tab, the metadata in XML format. Some sections of the metadata in HTML format are collapsible.
 
 ### Footer section
 
@@ -45,16 +51,3 @@ This included various information, such as:
 * License.
 
 * Name and year of the digitisation project.
-
-
-## Proposal for a new layout
-
-### Header
-
-With three sections: left (for logos of institutions), central (for title and subtitle), and right (for various form controls: login, language selector, etc.).
-
-
-## Proposed technologies for the new layout
-
-Web components, as they are reusable and encapsulates the functionality (see ??).
-
