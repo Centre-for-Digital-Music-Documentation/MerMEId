@@ -4,7 +4,7 @@ This layout contains the main sections of the page, and can serve as basis for t
 
 ## Header
 
-With three sections: left (for logos of institutions), central (for title and subtitle), and right (for various form controls: login, language selector, etc.).
+With three sections: left (button for displaying the navigation sidebar, logos of institutions), central (for title and subtitle), and right (for various form controls: login component, language selector component, etc.).
 
 ## Side navigation section
 
