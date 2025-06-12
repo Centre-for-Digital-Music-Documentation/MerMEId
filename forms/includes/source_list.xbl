@@ -92,6 +92,7 @@
                   <repository>
                     <corpName/>
                     <geogName/>
+                    <country/>
                     <identifier auth="RISM" auth.uri="http://www.rism.info"/>
                   </repository>
                   <identifier/>
@@ -788,4 +789,3 @@
       </xbl:template>
     </xbl:binding>
   </xbl:xbl>
-
