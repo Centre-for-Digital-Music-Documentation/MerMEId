@@ -106,58 +106,79 @@
             <h:div style="height:100%">
               <h:div class="strong"> Systematic keywords </h:div>
               <h:table class="popup_menu_table" cellpadding="0" cellspacing="0" border="0">
-                  
-                <xf:repeat nodeset="instance('taxonomy')//m:taxonomy[1]/m:category" id="level1_keywords-repeat">
-                  <tr>
-                    <td style="vertical-align:top;border-bottom: 1px solid #999; margin:0; padding:5px;">
-                      <!-- level 1 keywords  -->
-                      <xf:trigger submission="replace-form-with" appearance="minimal">
-                        <xf:label>
-                          <h:img src="{instance('parameters')/dcm:server_name}/editor/images/add.gif" alt="Add"/>
-                          <xf:output ref="m:desc"/>
-                        </xf:label>
-                        <xf:action ev:event="DOMActivate">
-                          <xf:dispatch name="check-for-termlist" target="keywords_menu"/>
-                          <xf:var name="keyword" select="m:desc/text()"/>
-                          <!-- insert new node -->
-                          <xf:action ref="$binding/m:classification/m:termList[m:term[position()=last()][.!=''] or not(m:term)]">
-                            <xf:insert context="." nodeset="m:term" at="last()" position="after" origin="xxf:instance('empty-instance')/m:meiHead/m:workList/m:work/m:classification/m:termList/m:term"/>
-                            <xf:setvalue ref="./m:term[position()=last()]" value="$keyword"/>
-                          </xf:action>
-<!-- or write values to last existing node if empty -->
-                          <xf:action ref="$binding/m:classification/m:termList/m:term[position()=last()][.='']">
-                            <xf:setvalue ref="." value="$keyword"/>
-                          </xf:action>
-                        </xf:action>
-                      </xf:trigger>
-                    </td>
-                    <td style="vertical-align:top;border-bottom: 1px solid #999; margin:0; padding:5px;">
-                      <!-- level 2 keywords -->
-                      <xf:repeat nodeset="m:category" id="category-index">
-                      <xf:var value="index('category-index')" name="index"/>
-                        <xf:trigger submission="replace-form-with" appearance="minimal">
-                          <xf:label>
-                            <h:img src="{instance('parameters')/dcm:server_name}/editor/images/add.gif" alt="Add"/>
-                            <xf:output ref="."/>
-                          </xf:label>
-                          <xf:action ev:event="DOMActivate">
-                            <xf:dispatch name="check-for-termlist" target="keywords_menu"/>
-                            <xf:var name="keyword" select="m:desc/text()"/>
-                            <xf:action ref="$binding/m:classification/m:termList[m:term[position()=last()][.!=''] or not(m:term)]">
-                              <xf:insert context="." nodeset="m:term" at="last()" position="after" origin="xxf:instance('empty-instance')/m:meiHead/m:workList/m:work/m:classification/m:termList/m:term"/>
-                              <xf:setvalue ref="m:term[position()=last()]" value="$keyword"/>
-                            </xf:action>
-                            <!-- or write values to last existing node if empty -->
-                            <xf:action ref="$binding/m:classification/m:termList/m:term[position()=last()][.='']">
-                              <xf:setvalue ref="." value="$keyword"/>
-                            </xf:action>
-                          </xf:action>
-                        </xf:trigger>
-                        <h:br clear="all"/>
-                      </xf:repeat>
-                    </td>
-                  </tr>
-                </xf:repeat>
+                
+                  <xf:repeat nodeset="instance('taxonomy')//m:taxonomy[1]/m:category" id="level1_keywords-repeat">
+                      <tr>
+                          <td style="vertical-align:top;border-bottom: 1px solid #999; margin:0; padding:5px;">
+                              <!-- level 1 keywords  -->
+                              <xf:trigger submission="replace-form-with" appearance="minimal">
+                                  <xf:label>
+                                      <h:img src="{instance('parameters')/dcm:server_name}/editor/images/add.gif" alt="Add"/>
+                                      <xf:output ref="m:desc"/>
+                                  </xf:label>
+                                  <xf:action ev:event="DOMActivate">
+                                      <xf:dispatch name="check-for-termlist" target="keywords_menu"/>
+                                      <xf:var name="keyword" select="m:desc/text()"/>
+                                      <!-- insert new node -->
+                                      <xf:action ref="$binding/m:classification/m:termList[m:term[position()=last()][.!=''] or not(m:term)]">
+                                          <xf:insert context="." nodeset="m:term" at="last()" position="after" origin="xxf:instance('empty-instance')/m:meiHead/m:workList/m:work/m:classification/m:termList/m:term"/>
+                                          <xf:setvalue ref="./m:term[position()=last()]" value="$keyword"/>
+                                      </xf:action>
+                                      <!-- or write values to last existing node if empty -->
+                                      <xf:action ref="$binding/m:classification/m:termList/m:term[position()=last()][.='']">
+                                          <xf:setvalue ref="." value="$keyword"/>
+                                      </xf:action>
+                                  </xf:action>
+                              </xf:trigger>
+                          </td>
+                          <td style="vertical-align:top;border-bottom: 1px solid #999; margin:0; padding:5px;">
+                              <!-- level 2 keywords -->
+                              <xf:repeat nodeset="m:category" id="level2_keywords-repeat">
+                                  <xf:trigger submission="replace-form-with" appearance="minimal">
+                                      <xf:label>
+                                          <h:img src="{instance('parameters')/dcm:server_name}/editor/images/add.gif" alt="Add"/>
+                                          <xf:output ref="m:desc"/>
+                                      </xf:label>
+                                      <xf:action ev:event="DOMActivate">
+                                          <xf:dispatch name="check-for-termlist" target="keywords_menu"/>
+                                          <xf:var name="keyword" select="m:desc/text()"/>
+                                          <xf:action ref="$binding/m:classification/m:termList[m:term[position()=last()][.!=''] or not(m:term)]">
+                                              <xf:insert context="." nodeset="m:term" at="last()" position="after" origin="xxf:instance('empty-instance')/m:meiHead/m:workList/m:work/m:classification/m:termList/m:term"/>
+                                              <xf:setvalue ref="m:term[position()=last()]" value="$keyword"/>
+                                          </xf:action>
+                                          <xf:action ref="$binding/m:classification/m:termList/m:term[position()=last()][.='']">
+                                              <xf:setvalue ref="." value="$keyword"/>
+                                          </xf:action>
+                                      </xf:action>
+                                  </xf:trigger>
+                                  <!-- Add level 3 keywords -->
+                                  <h:div style="margin-left: 20px;">
+                                      <xf:repeat nodeset="m:category" id="level3_keywords-repeat">
+                                          <xf:trigger submission="replace-form-with" appearance="minimal">
+                                              <xf:label>
+                                                  <h:img src="{instance('parameters')/dcm:server_name}/editor/images/add.gif" alt="Add"/>
+                                                  <xf:output ref="m:desc"/>
+                                              </xf:label>
+                                              <xf:action ev:event="DOMActivate">
+                                                  <xf:dispatch name="check-for-termlist" target="keywords_menu"/>
+                                                  <xf:var name="keyword" select="m:desc/text()"/>
+                                                  <xf:action ref="$binding/m:classification/m:termList[m:term[position()=last()][.!=''] or not(m:term)]">
+                                                      <xf:insert context="." nodeset="m:term" at="last()" position="after" origin="xxf:instance('empty-instance')/m:meiHead/m:workList/m:work/m:classification/m:termList/m:term"/>
+                                                      <xf:setvalue ref="m:term[position()=last()]" value="$keyword"/>
+                                                  </xf:action>
+                                                  <xf:action ref="$binding/m:classification/m:termList/m:term[position()=last()][.='']">
+                                                      <xf:setvalue ref="." value="$keyword"/>
+                                                  </xf:action>
+                                              </xf:action>
+                                          </xf:trigger>
+                                          <h:br clear="all"/>
+                                      </xf:repeat>
+                                  </h:div>
+                                  <h:br clear="all"/>
+                              </xf:repeat>
+                          </td>
+                      </tr>
+                  </xf:repeat>
               </h:table>
               <h:br/>
               <h:div class="strong"> Other keywords </h:div>

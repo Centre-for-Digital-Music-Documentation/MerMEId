@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classification xmlns="http://www.music-encoding.org/ns/mei">
+    
+    <!-- 
+        This file defines systematic keywords for the classification of works. 
+        The structured keywords are used to create the structured part of the 
+        keywords menu at the "Work" tab. 
+        They may be used to generate a catalog's hierarchical menu of genres
+        like the one in the CNW (http://www.kb.dk/dcm/cnw.html). 
+    -->
+    
+    <!-- Structured classification, 2 levels -->
+
+     <taxonomy xml:id="genre">
+        <category xml:id="VocalMusic">
+            <desc>Vokalmusik</desc>
+            <category xml:id="ContextAndInstrumentation">
+                <desc>Kontext- und besetzungsbezogen</desc>
+                <category xml:id="LiturgicalVocalMusic">
+                    <desc>Geistliche Vokalmusik (liturgisch)</desc>
+                </category>
+                <category xml:id="NonLiturgicalVocalMusic">
+                    <desc>Geistliche Vokalmusik (außerliturgisch)</desc>
+                </category>
+                <category xml:id="SecularVocalMusic">
+                    <desc>Weltliche Vokalmusik</desc>
+                </category>
+            </category>
+
+            <category xml:id="OccasionBased">
+                <desc>Anlassbezogen</desc>
+                <category xml:id="InaugurationMusic">
+                    <desc>Einweihungsmusik</desc>
+                    <category xml:id="ChurchInaugurationMusic">
+                        <desc>Kircheneinweihungsmusik</desc>
+                    </category>
+                </category>
+                <category xml:id="PreacherIntroductionMusic">
+                    <desc>Predigereinführungsmusik</desc>
+                </category>
+                <category xml:id="FuneralMusic">
+                    <desc>Trauermusik</desc>
+                </category>
+                <category xml:id="WeddingMusic">
+                    <desc>Hochzeitsmusik</desc>
+                </category>
+                <category xml:id="BirthdayMusic">
+                    <desc>Geburtstagsmusik/Musik zur Geburt</desc>
+                </category>
+                <category xml:id="AnniversaryMusic">
+                    <desc>Jubiläumsmusik</desc>
+                </category>
+                <category xml:id="PoliticalMusic">
+                    <desc>Musik zu politischem Anlass</desc>
+                    <category xml:id="ImperialMusic">
+                        <desc>Musik mit Bezug zum Kaiserhaus</desc>
+                    </category>
+                    <category xml:id="PeaceCelebrationMusic">
+                        <desc>Musik zu Friedensfeier</desc>
+                    </category>
+                    <category xml:id="VictoryCelebrationMusic">
+                        <desc>Musik zu Siegesfeier</desc>
+                    </category>
+                </category>
+                <category xml:id="SchoolMusic">
+                    <desc>Musik für schulischen Anlass</desc>
+                </category>
+                <category xml:id="CaptainsMusic">
+                    <desc>Kapitänsmusik</desc>
+                </category>
+            </category>
+
+            <category xml:id="OrderBased">
+                <desc>Ordnungsbezogen</desc>
+                <category xml:id="ChurchMusicCycle">
+                    <desc>Kirchenmusikalischer Jahrgang [Kantaten-Jahrgang]</desc>
+                </category>
+                <category xml:id="Collection">
+                    <desc>Sammlung</desc>
+                </category>
+            </category>
+
+            <category xml:id="SacredGenres">
+                <desc>Gattungsbezogen (geistlich)</desc>
+                <!-- ... existing sacred genres ... -->
+            </category>
+
+            <category xml:id="SecularGenres">
+                <desc>Gattungsbezogen (weltlich)</desc>
+                <!-- ... existing secular genres ... -->
+            </category>
+        </category>
+
+        <category xml:id="InstrumentalMusic">
+            <desc>Instrumentalmusik</desc>
+            <category xml:id="InstrumentalBasic">
+                <desc>Besetzungsbezogen</desc>
+                <category xml:id="InstrumentalMusicGeneral">
+                    <desc>Instrumentalmusik</desc>
+                </category>
+            </category>
+
+            <category xml:id="InstrumentalOrder">
+                <desc>Ordnungsbezogen</desc>
+                <category xml:id="InstrumentalCollection">
+                    <desc>Sammlung</desc>
+                </category>
+            </category>
+
+            <category xml:id="VoiceCount">
+                <desc>Stimmzahlbezogen</desc>
+                <category xml:id="OneVoiceNoBc">
+                    <desc>1 Stimme ohne Bc</desc>
+                </category>
+                <category xml:id="TwoVoicesNoBc">
+                    <desc>2 Stimmen ohne Bc</desc>
+                </category>
+                <category xml:id="ThreeVoicesNoBc">
+                    <desc>3 Stimmen ohne Bc</desc>
+                </category>
+                <category xml:id="FourVoicesNoBc">
+                    <desc>4 Stimmen ohne Bc</desc>
+                </category>
+                <category xml:id="SixVoicesNoBc">
+                    <desc>6 Stimmen ohne Bc</desc>
+                </category>
+                <category xml:id="OneVoiceBc">
+                    <desc>1 Stimme und Bc</desc>
+                </category>
+                <category xml:id="TwoVoicesBc">
+                    <desc>2 Stimmen und Bc</desc>
+                </category>
+                <category xml:id="ThreeVoicesBc">
+                    <desc>3 Stimmen und Bc</desc>
+                </category>
+                <category xml:id="FourVoicesBc">
+                    <desc>4 Stimmen und Bc</desc>
+                </category>
+                <category xml:id="FiveVoicesBc">
+                    <desc>5 Stimmen und Bc</desc>
+                </category>
+                <category xml:id="SixVoicesBc">
+                    <desc>6 Stimmen und Bc</desc>
+                </category>
+                <category xml:id="StringsBc">
+                    <desc>Str, Bc</desc>
+                </category>
+                <category xml:id="OneSoloStringsBc">
+                    <desc>1 Solostimme, Str, Bc</desc>
+                </category>
+                <category xml:id="TwoSoloStringsBc">
+                    <desc>2 Solostimmen, Str, Bc</desc>
+                </category>
+                <category xml:id="ThreeSoloStringsBc">
+                    <desc>3 Solostimmen, Str, Bc</desc>
+                </category>
+                <category xml:id="FourSoloStringsBc">
+                    <desc>4 Solostimmen, Str, Bc</desc>
+                </category>
+                <category xml:id="FiveSoloStringsBc">
+                    <desc>5 Solostimmen, Str, Bc</desc>
+                </category>
+                <category xml:id="SixSoloStringsBc">
+                    <desc>6 Solostimmen, Str, Bc</desc>
+                </category>
+                <category xml:id="SevenSoloStringsBc">
+                    <desc>7 Solostimmen, Str, Bc</desc>
+                </category>
+                <category xml:id="OneSoloLikeStringsBc">
+                    <desc>1 (Solo-)Stimme, Str, Bc</desc>
+                </category>
+                <category xml:id="TwoSoloLikeStringsBc">
+                    <desc>2 (Solo-)Stimmen, Str, Bc</desc>
+                </category>
+                <category xml:id="ThreeSoloLikeStringsBc">
+                    <desc>3 (Solo-)Stimmen, Str, Bc</desc>
+                </category>
+                <category xml:id="FourSoloLikeStringsBc">
+                    <desc>4 (Solo-)Stimmen, Str, Bc</desc>
+                </category>
+                <category xml:id="FiveSoloLikeStringsBc">
+                    <desc>5 (Solo-)Stimmen, Str, Bc</desc>
+                </category>
+                <category xml:id="SixSoloLikeStringsBc">
+                    <desc>6 (Solo-)Stimmen, Str, Bc</desc>
+                </category>
+                <category xml:id="SevenPlusSoloLikeStringsBc">
+                    <desc>7 und mehr (Solo-)Stimmen, Str, Bc</desc>
+                </category>
+                <category xml:id="KeyboardInstrument">
+                    <desc>Tasteninstrument</desc>
+                </category>
+                <category xml:id="PluckedInstrument">
+                    <desc>Zupfinstrument</desc>
+                </category>
+            </category>
+
+            <category xml:id="InstrumentalGenres">
+                <desc>Gattungsbezogen</desc>
+                <category xml:id="Ouverture">
+                    <desc>Ouvertüre (= nur Ouvertüre, ohne Suite)</desc>
+                </category>
+                <category xml:id="Suite">
+                    <desc>Suite (= Partie, Partia; Suite ohne Ouvertüre)</desc>
+                </category>
+                <category xml:id="OuvertureSuite">
+                    <desc>Ouvertüren-Suite (Ouvertüre + Suite)</desc>
+                </category>
+                <category xml:id="Sonata">
+                    <desc>Sonate</desc>
+                </category>
+                <category xml:id="Symphony">
+                    <desc>Sinfonia/Symphonie</desc>
+                </category>
+                <category xml:id="Concerto">
+                    <desc>Konzert/Concert/Concerto</desc>
+                </category>
+                <category xml:id="Divertimento">
+                    <desc>Divertimento</desc>
+                </category>
+                <category xml:id="Fantasy">
+                    <desc>Fantasie</desc>
+                </category>
+                <category xml:id="Scherzo">
+                    <desc>Scherzo</desc>
+                </category>
+                <category xml:id="Capriccio">
+                    <desc>Capriccio</desc>
+                </category>
+                <category xml:id="Conclusion">
+                    <desc>Conclusion</desc>
+                </category>
+                <category xml:id="SingleMovement">
+                    <desc>Einzelsatz</desc>
+                </category>
+                <category xml:id="Menuet">
+                    <desc>Menuett</desc>
+                </category>
+                <category xml:id="DanceMovement">
+                    <desc>Tanzsatz</desc>
+                </category>
+                <category xml:id="March">
+                    <desc>Marsch</desc>
+                </category>
+                <category xml:id="Canon">
+                    <desc>Kanon</desc>
+                </category>
+                <category xml:id="Fugue">
+                    <desc>Fuge</desc>
+                </category>
+                <category xml:id="ChoralPrelude">
+                    <desc>Choralvorspiel</desc>
+                </category>
+                <category xml:id="ChoralArrangement">
+                    <desc>Choralbearbeitung</desc>
+                </category>
+                <category xml:id="InstrumentalArrangement">
+                    <desc>Instrumentalbearbeitung</desc>
+                </category>
+            </category>
+        </category>
+
+        <category xml:id="Writings">
+            <desc>Schriften</desc>
+            <category xml:id="Biography">
+                <desc>Autobiographie/Biographie</desc>
+            </category>
+            <category xml:id="Foreword">
+                <desc>Vorwort</desc>
+            </category>
+            <category xml:id="Dedication">
+                <desc>Widmung</desc>
+            </category>
+        </category>
+    </taxonomy>
+    
+    <!-- Unordered supplementary keywords (may also be entered manually in the editor instead)  -->
+    
+    <termList label="work_keywords">
+        <term>Trio</term>
+        <term>Quartet</term>
+        <term>Quintet</term>
+        <term>Sextet</term>
+        <term>Septet</term>
+        <term>Octet</term>
+        <term>String trio</term>
+        <term>String quartet</term>
+        <term>String quintet</term>
+        <term>Piano trio</term>
+        <term>Piano quartet</term>
+        <term>Piano quintet</term>
+        <term>Wind quartet</term>
+        <term>Wind quintet</term>
+        <term>Oratorio</term>
+        <term>Mass</term>
+        <term>Cantata</term>
+        <term>Motet</term>
+        <term>Lied</term>            
+    </termList>          
+</classification>
