@@ -154,6 +154,13 @@
                     </xf:input>
                     <dcm:attribute-editor ref="m:geogName"/>
                   </h:div>
+                  <h:div>
+                    <dcm:create nodeset="m:country" label="Add country" origin="xxf:instance('empty-instance')/m:meiHead/m:manifestationList/m:manifestation[1]/m:itemList/m:item/m:physLoc/m:repository/m:country"/>
+                    <xf:input ref="m:country" class="maxlong">
+                      <xf:label class="fixed_width">Country </xf:label>
+                    </xf:input>
+                    <dcm:attribute-editor ref="m:country"/>
+                  </h:div>
                   
                   <!-- RISM sigla input -->
                   <h:div>
@@ -628,4 +635,3 @@
     </xbl:template>
   </xbl:binding>
 </xbl:xbl>
-
