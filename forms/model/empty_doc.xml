@@ -65,6 +65,7 @@
             <title type="uniform" xml:lang="en"/>
             <title type="original" xml:lang="en"/>
             <title type="subordinate" xml:lang="en"/>
+            <title type="other" xml:lang="en"/>
             <title type="text_source" xml:lang="en"/>
             <contributor>
                <persName role="composer"/>
