@@ -4,8 +4,7 @@
 # 2. run the eXist-db
 #########################
 ARG EXISTDB_IMAGE=existdb/existdb:6.0.1
-FROM eclipse-temurin:8-jdk as builder
-LABEL maintainer="Peter Stadler,Omar Siam"
+FROM eclipse-temurin:8-jdk AS builder
 
 ENV BUILD_HOME="/opt/builder"
 
@@ -45,6 +44,8 @@ RUN ant
 # as well as orbeon and the orbeon xforms filter
 #########################
 FROM ${EXISTDB_IMAGE}
+LABEL org.opencontainers.image.authors="Peter Stadler,Omar Siam"
+LABEL org.opencontainers.image.source="https://github.com/Edirom/MerMEId"
 
 ENV CLASSPATH=/exist/lib/*
 
@@ -70,3 +71,12 @@ RUN ["java", "net.sf.saxon.Transform", "-s:/exist/etc/log4j2.xml", "-xsl:/exist/
 #RUN [ "java", \
 #    "org.exist.start.Main", "client", "-l", \
 #    "--no-gui",  "--xpath", "system:get-version()" ]
+
+# overwrite default healthcheck and explicitly set `-ouri`
+# see https://github.com/Edirom/MerMEId/issues/222
+HEALTHCHECK CMD [ "java", \
+    "org.exist.start.Main", "client", \
+    "--no-gui",  \
+    "--user", "guest", "--password", "guest", \
+    "-ouri=xmldb:exist://localhost:8080/xmlrpc", \
+    "--xpath", "system:get-version()" ]
