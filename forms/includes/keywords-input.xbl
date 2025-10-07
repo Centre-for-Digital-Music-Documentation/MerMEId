@@ -83,7 +83,7 @@
           </h:div>
         </xf:repeat>
 
-        <dcm:create nodeset="m:term" label="Add keyword"/>
+        <dcm:create nodeset="m:term" label="Add keyword" origin="xxf:instance('empty-instance')/m:meiHead/m:workList/m:work/m:classification/m:termList/m:term"/>
       </xf:group>
             
             <xf:group ref="m:classification/m:termList">
@@ -105,7 +105,7 @@
             <xf:label>Keywords</xf:label>
             <h:div style="height:100%">
               <h:div class="strong"> Systematic keywords </h:div>
-              <h:table class="popup_menu_table" cellpadding="0" cellspacing="0" border="0">
+                <h:table class="popup_menu_table" cellpadding="0" cellspacing="0" border="0">
                 
                   <xf:repeat nodeset="instance('taxonomy')//m:taxonomy[1]/m:category" id="level1_keywords-repeat">
                       <tr>
@@ -119,14 +119,17 @@
                                   <xf:action ev:event="DOMActivate">
                                       <xf:dispatch name="check-for-termlist" target="keywords_menu"/>
                                       <xf:var name="keyword" select="m:desc/text()"/>
+                                      <xf:var name="type" select="@type"/>
                                       <!-- insert new node -->
                                       <xf:action ref="$binding/m:classification/m:termList[m:term[position()=last()][.!=''] or not(m:term)]">
                                           <xf:insert context="." nodeset="m:term" at="last()" position="after" origin="xxf:instance('empty-instance')/m:meiHead/m:workList/m:work/m:classification/m:termList/m:term"/>
                                           <xf:setvalue ref="./m:term[position()=last()]" value="$keyword"/>
+                                          <xf:setvalue ref="./m:term[position()=last()]/@type" value="$type" xxf:create="true"/>
                                       </xf:action>
                                       <!-- or write values to last existing node if empty -->
                                       <xf:action ref="$binding/m:classification/m:termList/m:term[position()=last()][.='']">
                                           <xf:setvalue ref="." value="$keyword"/>
+                                          <xf:setvalue ref="@type" value="$type" xxf:create="true"/>
                                       </xf:action>
                                   </xf:action>
                               </xf:trigger>
@@ -142,12 +145,15 @@
                                       <xf:action ev:event="DOMActivate">
                                           <xf:dispatch name="check-for-termlist" target="keywords_menu"/>
                                           <xf:var name="keyword" select="m:desc/text()"/>
+                                          <xf:var name="type" select="@type"/>
                                           <xf:action ref="$binding/m:classification/m:termList[m:term[position()=last()][.!=''] or not(m:term)]">
                                               <xf:insert context="." nodeset="m:term" at="last()" position="after" origin="xxf:instance('empty-instance')/m:meiHead/m:workList/m:work/m:classification/m:termList/m:term"/>
                                               <xf:setvalue ref="m:term[position()=last()]" value="$keyword"/>
+                                              <xf:setvalue ref="m:term[position()=last()]/@type" value="$type" xxf:create="true"/>
                                           </xf:action>
                                           <xf:action ref="$binding/m:classification/m:termList/m:term[position()=last()][.='']">
                                               <xf:setvalue ref="." value="$keyword"/>
+                                              <xf:setvalue ref="@type" value="$type" xxf:create="true"/>
                                           </xf:action>
                                       </xf:action>
                                   </xf:trigger>
@@ -162,12 +168,15 @@
                                               <xf:action ev:event="DOMActivate">
                                                   <xf:dispatch name="check-for-termlist" target="keywords_menu"/>
                                                   <xf:var name="keyword" select="m:desc/text()"/>
+                                                  <xf:var name="type" select="@type"/>
                                                   <xf:action ref="$binding/m:classification/m:termList[m:term[position()=last()][.!=''] or not(m:term)]">
                                                       <xf:insert context="." nodeset="m:term" at="last()" position="after" origin="xxf:instance('empty-instance')/m:meiHead/m:workList/m:work/m:classification/m:termList/m:term"/>
                                                       <xf:setvalue ref="m:term[position()=last()]" value="$keyword"/>
+                                                      <xf:setvalue ref="m:term[position()=last()]/@type" value="$type" xxf:create="true"/>
                                                   </xf:action>
                                                   <xf:action ref="$binding/m:classification/m:termList/m:term[position()=last()][.='']">
                                                       <xf:setvalue ref="." value="$keyword"/>
+                                                      <xf:setvalue ref="@type" value="$type" xxf:create="true"/>
                                                   </xf:action>
                                               </xf:action>
                                           </xf:trigger>
