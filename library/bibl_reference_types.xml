@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="2013">
   <!-- Bibliographic reference type definitions -->
   <!-- DCM 2013 -->
@@ -55,6 +54,7 @@
     <bibl label="">
       <genre>manuscript</genre>
       <author/>
+      <title type="short"/>
       <title/>
       <creation>
         <date isodate=""/>
@@ -81,6 +81,7 @@
       <genre>article</genre>
       <genre>journal</genre>
       <author/>
+      <title type="short"/>
       <title level="a"/>
       <title level="j"/>
       <editor/>
@@ -104,6 +105,7 @@
       <genre>article</genre>
       <genre>newspaper</genre>
       <author/>
+      <title type="short"/>
       <title level="a"/>
       <title level="j"/>
       <editor/>
@@ -126,6 +128,7 @@
       <genre>journal</genre>
       <author type="interviewer"/>
       <author type="interviewee"/>
+      <title type="short"/>
       <title level="a"/>
       <title level="j"/>
       <editor/>
@@ -148,6 +151,7 @@
       <genre>newspaper</genre>
       <author type="interviewer"/>
       <author type="interviewee"/>
+      <title type="short"/>
       <title level="a"/>
       <title level="j"/>
       <editor/>
@@ -168,6 +172,7 @@
     <bibl label="">
       <genre>book</genre>
       <author/>
+      <title type="short"/>
       <title level="m"/>
       <title level="s"/>
       <editor/>
@@ -185,6 +190,7 @@
       <genre>article</genre>
       <genre>book</genre>
       <author/>
+      <title type="short"/>
       <title level="a"/>
       <title level="m"/>
       <title level="s"/>
