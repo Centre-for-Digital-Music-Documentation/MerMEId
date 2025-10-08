@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="4.0.0">
    <meiHead>
       <fileDesc>
@@ -117,7 +116,7 @@
                </eventList>
             </history>
             <langUsage>
-               <language xml:id="" xml:lang=""></language>
+               <language xml:id="" xml:lang=""/>
             </langUsage>
             <biblList>
                <head>Bibliography</head>
@@ -135,6 +134,7 @@
                      <repository>
                         <corpName/>
                         <geogName/>
+                        <country/>
                         <identifier auth="RISM" auth.uri="http://www.rism.info/"/>
                      </repository>
                      <identifier/>
@@ -170,7 +170,7 @@
             </notesStmt>
             <classification>
                <termList>
-                  <term/>
+                  <term type=""/>
                </termList>
             </classification>            
             <expressionList>
@@ -264,7 +264,7 @@
                   </notesStmt>
                   <classification>
                      <termList>
-                        <term/>
+                        <term type=""/>
                      </termList>
                   </classification>
                   <componentList>
@@ -303,7 +303,7 @@
                </expression>
             </expressionList>
             <relationList>
-               <relation rel="isPartOf" label="" target=""/>
+               <relation rel="isPartOf" label="" target="" targettype=""/>
             </relationList>
          </work>
       </workList>
@@ -324,29 +324,37 @@
             </pubStmt>
             <physDesc type="paper_type" label="">
                <dimensions>
-                  <locusGrp><locus></locus></locusGrp>
-                  <term></term>
-                  <extent unit="lines" quantity=""></extent>
+                  <locusGrp>
+                            <locus/>
+                        </locusGrp>
+                  <term type=""/>
+                  <extent unit="lines" quantity=""/>
                   <dimensions type="format">
-                     <height quantity="" unit="cm"></height>
-                     <width quantity="" unit="cm"></width>
+                     <height quantity="" unit="cm"/>
+                     <width quantity="" unit="cm"/>
                   </dimensions>
                   <dimensions type="rastral_mirror">
-                     <height quantity="" unit="cm"></height>
-                     <width quantity="" unit="cm"></width>
+                     <height quantity="" unit="cm"/>
+                     <width quantity="" unit="cm"/>
                   </dimensions>
                </dimensions>
                <supportDesc>
-                  <support type="paper_quality"><p/></support>
-                  <condition><p/></condition>
+                  <support type="paper_quality">
+                            <p/>
+                        </support>
+                  <condition>
+                            <p/>
+                        </condition>
                </supportDesc>
                <bindingDesc>
                   <binding>
-                     <condition><p type="general_description"/></condition>
+                     <condition>
+                                <p type="general_description"/>
+                            </condition>
                   </binding>
                </bindingDesc>
                <watermark type="predefined">
-                  <title></title>
+                  <title/>
                   <ref corresp="" target=""/>
                   <heraldry corresp=""/>
                </watermark>
@@ -358,13 +366,13 @@
                </titlePage>
                <extent unit=""/>
                <dimensions>
-                  <height quantity="" unit=""></height>
-                  <width quantity="" unit=""></width>
-                  <depth quantity="" unit=""></depth>
-                  <dim type="" quantity="" unit=""></dim>
+                  <height quantity="" unit=""/>
+                  <width quantity="" unit=""/>
+                  <depth quantity="" unit=""/>
+                  <dim type="" quantity="" unit=""/>
                </dimensions>
                <watermark type="predefined">
-                  <title></title>
+                  <title/>
                   <ref corresp="" target=""/>
                   <heraldry corresp=""/>
                </watermark>
@@ -382,10 +390,14 @@
                <bindingDesc>
                   <binding>
                      <p type="definition"/>
-                     <condition><p type="general_description"/></condition>
+                     <condition>
+                                <p type="general_description"/>
+                            </condition>
                   </binding>
                </bindingDesc>
-               <condition><p type="general_description"/></condition>
+               <condition>
+                        <p type="general_description"/>
+                    </condition>
             </physDesc>
             <notesStmt>
                <annot type="source_description"/>
@@ -395,7 +407,7 @@
             </notesStmt>
             <classification>
                <termList>
-                  <term/>
+                  <term type=""/>
                </termList>
             </classification>
             <itemList>
@@ -403,30 +415,38 @@
                   <identifier label=""/>
                   <physDesc type="paper_type" label="">
                      <dimensions>
-                        <locusGrp><locus></locus></locusGrp>
-                        <term></term>
-                        <extent unit="lines" quantity=""></extent>
+                        <locusGrp>
+                                    <locus/>
+                                </locusGrp>
+                        <term/>
+                        <extent unit="lines" quantity=""/>
                         <dimensions type="format">
-                           <height quantity="" unit="cm"></height>
-                           <width quantity="" unit="cm"></width>
+                           <height quantity="" unit="cm"/>
+                           <width quantity="" unit="cm"/>
                         </dimensions>
                         <dimensions type="rastral_mirror">
-                           <height quantity="" unit="cm"></height>
-                           <width quantity="" unit="cm"></width>
+                           <height quantity="" unit="cm"/>
+                           <width quantity="" unit="cm"/>
                         </dimensions>
                      </dimensions>
                      <supportDesc>
-                        <support type="paper_quality"><p/></support>
-                        <condition><p/></condition>
+                        <support type="paper_quality">
+                                    <p/>
+                                </support>
+                        <condition>
+                                    <p/>
+                                </condition>
                      </supportDesc>
                      <bindingDesc>
                         <binding>
                            <p type="definition"/>
-                           <condition><p type="general_description"/></condition>
+                           <condition>
+                                        <p type="general_description"/>
+                                    </condition>
                         </binding>
                      </bindingDesc>
                      <watermark type="predefined">
-                        <title></title>
+                        <title/>
                         <ref corresp="" target=""/>
                         <heraldry corresp=""/>
                      </watermark>
@@ -439,19 +459,19 @@
                      </titlePage>
                      <extent unit=""/>
                      <dimensions>
-                        <height quantity="" unit=""></height>
-                        <width quantity="" unit=""></width>
-                        <depth quantity="" unit=""></depth>
-                        <dim type="" quantity="" unit=""></dim>
+                        <height quantity="" unit=""/>
+                        <width quantity="" unit=""/>
+                        <depth quantity="" unit=""/>
+                        <dim type="" quantity="" unit=""/>
                      </dimensions>
                      <handList>
                         <hand medium="" type="main">
-                           <p></p>
-                           <persName role="" />
+                           <p/>
+                           <persName role=""/>
                         </hand>
                      </handList>               
                      <watermark type="predefined">
-                        <title></title>
+                        <title/>
                         <ref corresp="" target=""/>
                         <heraldry corresp=""/>
                      </watermark>
@@ -471,7 +491,7 @@
                   </physLoc>
                   <history>
                      <acquisition>
-                        <date isodate="" />
+                        <date isodate=""/>
                      </acquisition>
                      <provenance>
                         <eventList>
